@@ -1,19 +1,22 @@
 body {
   width: 300px;
-  padding: 10px;
+  padding: 15px;
   font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
 }
 
 h1 {
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
 }
 
 #colorPalette {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .color-box {
@@ -22,26 +25,89 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.color-box:hover {
+  transform: scale(1.05);
 }
 
 .color-code {
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 2px 5px;
+  padding: 3px 6px;
   border-radius: 3px;
   font-size: 12px;
+  margin-bottom: 5px;
 }
 
-#analyzeBtn {
-  width: 100%;
+#controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  flex: 1;
   padding: 8px;
   background-color: #4caf50;
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s;
 }
 
-#analyzeBtn:hover {
+button:hover {
   background-color: #45a049;
+}
+
+#harmonies {
+  margin-top: 15px;
+}
+
+.harmony {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.harmony-color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+#savedPalettes {
+  margin-top: 15px;
+}
+
+.saved-palette {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.saved-palette-colors {
+  display: flex;
+  gap: 5px;
+  margin-right: 10px;
+}
+
+.saved-palette-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.saved-palette-url {
+  font-size: 12px;
+  color: #666;
 }

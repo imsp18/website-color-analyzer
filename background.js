@@ -28,7 +28,26 @@ function analyzeColors() {
   const sortedColors = Object.entries(colorCounts)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 5)
-    .map(([color]) => color);
+    .map(([color]) => rgbToHex(color));
 
-  chrome.runtime.sendMessage({ colors: sortedColors });
+  chrome.runtime.sendMessage({
+    colors: sortedColors,
+    url: window.location.hostname,
+  });
+}
+
+function rgbToHex(rgb) {
+  const [r, g, b] = rgb.match(/\d+/g);
+  return (
+    "#" +
+    (
+      (1 << 24) +
+      (Number.parseInt(r) << 16) +
+      (Number.parseInt(g) << 8) +
+      Number.parseInt(b)
+    )
+      .toString(16)
+      .slice(1)
+      .toUpperCase()
+  );
 }
