@@ -4,7 +4,8 @@
     "version": "1.0",
     "description": "Analyze website colors and create a palette based on major colors used",
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "scripting"
     ],
     "action": {
         "default_popup": "popup.html",
@@ -14,16 +15,9 @@
             "128": "icon128.png"
         }
     },
-    "content_scripts": [
-        {
-            "matches": [
-                "<all_urls>"
-            ],
-            "js": [
-                "content.js"
-            ]
-        }
-    ],
+    "background": {
+        "service_worker": "background.js"
+    },
     "icons": {
         "16": "icon16.png",
         "48": "icon48.png",

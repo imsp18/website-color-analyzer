@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const colorPalette = document.getElementById("colorPalette");
 
   analyzeBtn.addEventListener("click", () => {
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      chrome.tabs.sendMessage(tabs[0].id, { action: "analyzeColors" });
-    });
+    chrome.runtime.sendMessage({ action: "analyzeColors" });
   });
 
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
