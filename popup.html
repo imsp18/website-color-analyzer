@@ -4,19 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Palette Analyzer</title>
+    <title>Color Analyzer</title>
     <link rel="stylesheet" href="popup.css">
 </head>
 
 <body>
-    <h1>Color Palette Analyzer</h1>
-    <div id="colorPalette"></div>
-    <div id="controls">
-        <button id="analyzeBtn">Analyze Colors</button>
-        <button id="savedPalettesBtn">Saved Palettes</button>
-    </div>
-    <div id="harmonies"></div>
-    <div id="savedPalettes"></div>
+    <h2>Website Color Analyzer</h2>
+    <button id="analyzeBtn">Analyze Page</button>
+
+    <h3>Current Colors</h3>
+    <ul id="colorList"></ul>
+
+    <button id="saveBtn" style="display: none;">Save Palette</button>
+
+    <h3>Saved Palettes</h3>
+    <ul id="savedColors"></ul>
+
     <script src="popup.js"></script>
 </body>
 
